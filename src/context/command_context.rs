@@ -22,7 +22,7 @@ pub enum ArgumentType {
 pub struct CommandContext<S> {
     source: S,
     input: String,
-    command: Box<dyn Command<S>>,
+    command: Box<Command<S>>,
     arguments: HashMap<String, ParsedArgument<S, ArgumentType>>,
     // root_node: CommandNode<S>,
     // nodes: Vec<ParsedCommandNode<S>>,

@@ -15,7 +15,7 @@ pub struct ArgumentCommandNode<S, T> {
     redirect: Option<Box<dyn CommandNode<S>>>,
     modifier: Option<Box<dyn RedirectModifier<S>>>,
     forks: bool,
-    command: Box<dyn Command<S>>,
+    command: Box<Command<S>>,
 
     name: String,
     argument_type: Box<dyn ArgumentType<S, Type = T>>,
