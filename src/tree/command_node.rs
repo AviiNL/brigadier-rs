@@ -1,6 +1,6 @@
 use crate::{
     ambiguity_consumer::AmbiguityConsumer,
-    builder::argument_builder::ArgumentBuilder,
+    // builder::argument_builder::ArgumentBuilder,
     command::Command,
     context::command_context::CommandContext,
     redirect_modifier::RedirectModifier,
@@ -31,7 +31,7 @@ pub trait CommandNode<S> {
     fn get_children(&self) -> Vec<Box<dyn CommandNode<S>>>;
     fn get_child(&self, name: &str) -> Option<Box<dyn CommandNode<S>>>;
     fn add_child(&mut self, child: Box<dyn CommandNode<S>>);
-    fn create_builder(&self) -> Box<dyn ArgumentBuilder<S>>;
+    // fn create_builder(&self) -> Box<dyn ArgumentBuilder<S>>;
     fn get_redirect(&self) -> Option<Box<dyn CommandNode<S>>>;
     fn get_redirect_modifier(&self) -> Option<Box<dyn RedirectModifier<S>>>;
     fn parse(

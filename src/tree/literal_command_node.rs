@@ -2,7 +2,7 @@ use linked_hash_map::LinkedHashMap;
 
 use crate::{command::Command, redirect_modifier::RedirectModifier};
 
-use super::{argument_command_node::ArgumentCommandNode, command_node::CommandNode};
+use super::command_node::CommandNode;
 
 pub struct LiteralCommandNode<S> {
     literal: String,
@@ -56,7 +56,51 @@ impl<S> CommandNode<S> for LiteralCommandNode<S> {
         todo!()
     }
 
+    fn list_suggestions(
+        &self,
+        context: &mut crate::context::command_context::CommandContext<S>,
+        builder: &mut crate::suggestion::suggestions_builder::SuggestionsBuilder,
+    ) -> crate::suggestion::suggestions::Suggestions {
+        todo!()
+    }
+
+    fn get_name(&self) -> &str {
+        todo!()
+    }
+
+    fn get_usage(&self) -> &str {
+        todo!()
+    }
+
     fn get_command(&self) -> Option<Box<Command<S>>> {
+        todo!()
+    }
+
+    fn get_children(&self) -> Vec<Box<dyn CommandNode<S>>> {
+        todo!()
+    }
+
+    fn get_child(&self, name: &str) -> Option<Box<dyn CommandNode<S>>> {
+        todo!()
+    }
+
+    fn add_child(&mut self, child: Box<dyn CommandNode<S>>) {
+        todo!()
+    }
+
+    fn get_redirect(&self) -> Option<Box<dyn CommandNode<S>>> {
+        todo!()
+    }
+
+    fn get_redirect_modifier(&self) -> Option<Box<dyn RedirectModifier<S>>> {
+        todo!()
+    }
+
+    fn parse(
+        &self,
+        reader: &mut crate::string_reader::StringReader,
+        context: &mut crate::context::command_context::CommandContext<S>,
+    ) -> Result<(), String> {
         todo!()
     }
 }
